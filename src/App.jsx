@@ -1,21 +1,40 @@
+import {
+  createBrowserRouter,
+  RouterProvider,
+  } from "react-router-dom";
+import { redirect } from "react-router-dom";
 
-import { Outlet } from "react-router-dom";
-import Footer from "./Components/Footer";
-import Navbar from "./Components/Navbar";
+
+import { Layout } from "./Components/Layout";
+import Home from "./Routes/Home";
+import Login from "./Routes/Login";
+
 
 function App() {
-  return (
-    <>
-      {/* //Na linha seguinte deverá ser feito um teste se a aplicação
-        // está em dark mode e deverá utilizar a classe dark ou light */}
-      <div className={`app light}`}>
-        <Navbar />
-        <main>
-          <Outlet />
-        </main>
-        <Footer />
-      </div>
-    </>
+
+  const appRouter = createBrowserRouter([   
+    {
+      path: '', 
+      element: <Layout />,
+      children: [
+        {
+          path: '',
+          element: <Home/>
+        },
+        {
+          path: '*',
+          loader: () => redirect('')
+        },
+        {
+          path: 'login',
+          element: <Login/>          
+        }       
+      ]
+    }    
+  ])
+
+  return (    
+    <RouterProvider router={appRouter} />
   );
 }
 
