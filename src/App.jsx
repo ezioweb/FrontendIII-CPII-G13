@@ -22,6 +22,10 @@ function App() {
           element: <Home/>
         },
         {
+          path: 'home',
+          element: <Home/>
+        },
+        {
           path: '*',
           loader: () => redirect('')
         },

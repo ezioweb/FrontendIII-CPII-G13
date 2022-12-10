@@ -13,3 +13,18 @@
 .inputSpacing+.inputSpacing{
   margin: 1rem 0;
 }
+
+/* input.erroForm {
+  background-color: rgb(200, 77, 102);
+  
+} */
+
+form, span.erroForm {
+  color: red;
+}
+
+.btn :disabled {
+  opacity: .4;
+  box-shadow: none;
+  cursor: not-allowed;
+}
