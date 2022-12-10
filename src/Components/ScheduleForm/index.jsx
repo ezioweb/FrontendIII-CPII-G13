@@ -74,19 +74,15 @@ const ScheduleForm = () => {
       response => {
         response.json().then(
           (data) => userData(data),
-          console.log(data)
+            console.log(data)
           // navigate('home')
           
         )
-           
-              
+                   
       },
       
-          
-      
-        
-      
     )
+
 
 
   };
@@ -102,10 +98,10 @@ const ScheduleForm = () => {
         <form onSubmit={handleSubmit}>
           <div className={`row ${styles.rowSpacing}`}>
             <div className="col-sm-12 col-lg-6">
-              <label htmlFor="dentist" className="form-label">
+              <label htmlFor="dentista" className="form-label">
                 Dentista
               </label>
-              <select className="form-select" name="dentist" id="dentist">
+              <select className="form-select" name="dentista" id="dentista">
                 {/*Aqui deve ser feito um map para listar todos os dentistas*/}
                 {dentistaData.map(
                   dentistaLista => { 
@@ -119,10 +115,10 @@ const ScheduleForm = () => {
               </select>
             </div>
             <div className="col-sm-12 col-lg-6">
-              <label htmlFor="patient" className="form-label">
+              <label htmlFor="paciente" className="form-label">
                 Paciente
               </label>
-              <select className="form-select" name="patient" id="patient">
+              <select className="form-select" name="paciente" id="paciente">
                 {/*Aqui deve ser feito um map para listar todos os pacientes*/}
                 {pacienteData.map(
                   pacienteLista => { 
