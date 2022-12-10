@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Navbar.module.css";
 import { useAuth } from "../../Hooks/useAuth";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme";
 
 const Navbar = () => {
   const { theme, changeTheme } = useTheme()

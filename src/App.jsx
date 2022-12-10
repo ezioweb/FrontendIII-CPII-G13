@@ -6,7 +6,8 @@ import { redirect } from "react-router-dom";
 
 
 import { Layout } from "./Components/Layout";
-import { ThemeProvider } from "./hooks/useTheme";
+import { AuthProvider } from "./Hooks/useAuth";
+import { ThemeProvider } from "./Hooks/useTheme";
 import Detail from "./Routes/Detail";
 import Home from "./Routes/Home";
 import Login from "./Routes/Login";

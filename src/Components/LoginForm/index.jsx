@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 // import { useAuth } from "../../hooks/useAuth";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme";
 import { ctdUrl } from "../../urls";
 import styles from "./Form.module.css";
 

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useAuth } from "../../Hooks/useAuth";
-import { useTheme } from "../../hooks/useTheme";
+import { useTheme } from "../../Hooks/useTheme";
 import Footer from "../Footer";
 import Navbar from "../Navbar";
 
