@@ -55,7 +55,7 @@ const ScheduleForm = () => {
     const userData = {
       dentista: dentista,
       paciente: paciente,
-      dataAgendamento: dataConsulta
+      dataHoraAgendamento: dataConsulta
     }
 
     const requestHeaders = {
