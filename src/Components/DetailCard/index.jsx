@@ -22,15 +22,11 @@ const DetailCard = () => {
       );
   }, []);
   return (
-    //As instruções que estão com {''} precisam ser 
-    //substituídas com as informações que vem da api
     <>
       <h1>Detail about Dentist {dentistaData.nome} </h1>
       <section className="card col-sm-12 col-lg-6 container">
-        {/* //Na linha seguinte deverá ser feito um teste se a aplicação
-        // está em dark mode e deverá utilizar o css correto */}
         <div
-          className={`${theme === 'dark'? styles.CardBody : ''} card-body row`}
+          className={`${theme === 'dark'? styles.CardBody : ''} card-body row`}  
         >
           <div className="col-sm-12 col-lg-6">
             <img
