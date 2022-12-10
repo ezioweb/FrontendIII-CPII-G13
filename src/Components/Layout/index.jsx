@@ -12,9 +12,9 @@ export function Layout() {
 
   const isLogged = () => {
     if (token == null || token === 'null' || token.trim() === '') {
-      navigate('/login')
+      navigate('login')
     } else {
-      navigate('/home')
+      navigate('home')
     }
   }
 
