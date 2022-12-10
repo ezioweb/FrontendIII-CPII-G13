@@ -6,6 +6,7 @@ import { redirect } from "react-router-dom";
 
 
 import { Layout } from "./Components/Layout";
+import ScheduleFormModal from "./Components/ScheduleFormModal";
 import { AuthProvider } from "./Hooks/useAuth";
 import { ThemeProvider } from "./Hooks/useTheme";
 import Detail from "./Routes/Detail";
@@ -39,7 +40,12 @@ function App() {
         {
           path: 'dentista/:id',
           element: <Detail />
-        }        
+        },
+        {
+          path: 'consulta',
+          element: <ScheduleFormModal />
+        } 
+               
       ]
     }    
   ])

@@ -17,7 +17,6 @@ const DetailCard = () => {
       .then((response) => response.json()
       .then((data) => {
           setDentistaData(data);
-          console.log(data);
         })
       );
   }, []);

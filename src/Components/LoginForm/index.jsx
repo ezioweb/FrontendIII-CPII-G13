@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-// import { useAuth } from "../../hooks/useAuth";
+import { useAuth } from "../../Hooks/useAuth";
 import { useTheme } from "../../Hooks/useTheme";
 import { ctdUrl } from "../../urls";
 import styles from "./Form.module.css";
 
 const LoginForm = () => {
 
-  const [authToken, setAuthToken] = useState('')
+  // const [authToken, setAuthToken] = useState('')
   const [userName, setUserName] = useState('')
   const [userPassword, setUserPassword] = useState('')
   const [erroUserName, setErroUserName] = useState(false)
@@ -16,8 +16,9 @@ const LoginForm = () => {
   const [erroForm, setErroForm] = useState(true)
   const navigate = useNavigate()
   const { theme } = useTheme()
+  
 
-  // const { setToken } = useAuth()
+  const { setToken } = useAuth()
 
   
   //UserEffect para validar formulário
@@ -59,7 +60,7 @@ const LoginForm = () => {
 
     const requestHeaders = {
       'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     }
 
     const requestConfig = {
@@ -74,9 +75,9 @@ const LoginForm = () => {
         if(response.status === 200) {
           response.json().then(
             data => {
-              localStorage.setItem('authToken', data.jwt)
-              setAuthToken(data.jwt)
-              // setToken(data.jwt)
+              localStorage.setItem('token', data.token)
+              // setAuthToken(data.jwt)
+              setToken(data.token)
             }
           )
           
