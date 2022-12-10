@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { useAuth } from "../../hooks/useAuth";
+import { useTheme } from "../../hooks/useTheme";
 import { ctdUrl } from "../../urls";
 import styles from "./Form.module.css";
 
@@ -13,6 +15,9 @@ const LoginForm = () => {
   const [erroPassword, setErroPassword] = useState(false)
   const [erroForm, setErroForm] = useState(true)
   const navigate = useNavigate()
+  const { theme } = useTheme()
+
+  // const { setToken } = useAuth()
 
   
   //UserEffect para validar formulário
@@ -71,6 +76,7 @@ const LoginForm = () => {
             data => {
               localStorage.setItem('authToken', data.jwt)
               setAuthToken(data.jwt)
+              // setToken(data.jwt)
             }
           )
           
@@ -104,7 +110,7 @@ const LoginForm = () => {
       <div
         className={`text-center card container ${styles.card}`}
       >
-        <div className={`card-body ${styles.CardBody}`}>
+        <div className={`card-body ${theme === 'dark' ? styles.CardBody : '' }`}>
           <form onSubmit={handleSubmit}>
             <div>
               <input
@@ -112,6 +118,7 @@ const LoginForm = () => {
                 placeholder="Login"
                 name="login"
                 required
+                value={userName}
                 onChange={(event) => setUserName(event.target.value)}
               />
 
@@ -129,7 +136,7 @@ const LoginForm = () => {
                 name="password"
                 type="password"
                 required
-                
+                value={userPassword}
                 onChange={event => setUserPassword(event.target.value)}
               />
               
