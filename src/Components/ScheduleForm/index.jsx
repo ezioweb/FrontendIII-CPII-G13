@@ -11,7 +11,7 @@ const ScheduleForm = () => {
   const [pacienteData, setPacienteData] = useState([])
   const navigate = useNavigate()
   const { theme } = useTheme()
-  const { token, setToken } = useAuth()
+  const { token } = useAuth()
 
 
   useEffect(() => {
@@ -29,7 +29,6 @@ const ScheduleForm = () => {
       .then((response) => response.json()
       .then((data) => {
         setPacienteData(data.body);
-        console.log(data.body)
         })
       );
   }, []);
@@ -53,8 +52,8 @@ const ScheduleForm = () => {
 
 
     const userData = {
-      dentista: dentista,
-      paciente: paciente,
+      dentista: dentista[0],
+      paciente: paciente[0],
       dataHoraAgendamento: dataConsulta
     }
 
@@ -70,21 +69,13 @@ const ScheduleForm = () => {
       body: JSON.stringify(userData)
     }
 
-    fetch(`${ctdUrl}consulta`, requestConfig).then(
-      response => {
-        response.json().then(
-          (data) => userData(data),
-            console.log(data)
-          // navigate('home')
-          
-        )
-                   
-      },
-      
-    )
+    fetch(`${ctdUrl}consulta`, requestConfig)
+      .then(response => response.json()
+      // .then((data) => userData(data),
+      //     navigate('home')
+      )
 
-
-
+      navigate('home')
   };
 
   return (
@@ -92,7 +83,7 @@ const ScheduleForm = () => {
       {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
       <div
-        className={`text-center container}`
+        className={`text-center container ${theme === 'dark'? styles.cardDark : ''}`
         }
       >
         <form onSubmit={handleSubmit}>
@@ -104,11 +95,11 @@ const ScheduleForm = () => {
               <select className="form-select" name="dentista" id="dentista">
                 {/*Aqui deve ser feito um map para listar todos os dentistas*/}
                 {dentistaData.map(
-                  dentistaLista => { 
+                  dentista => { 
                     return <option 
-                              key={dentistaLista.matricula} 
-                              value={dentistaLista.matricula}>
-                              {`${dentistaLista.nome} ${dentistaLista.sobrenome}`}
+                              key={dentista.matricula} 
+                              value={dentista.matricula}>
+                              {`${dentista.nome} ${dentista.sobrenome}`}
                           </option>
                 })}
                 
@@ -121,11 +112,11 @@ const ScheduleForm = () => {
               <select className="form-select" name="paciente" id="paciente">
                 {/*Aqui deve ser feito um map para listar todos os pacientes*/}
                 {pacienteData.map(
-                  pacienteLista => { 
+                  paciente => { 
                     return <option 
-                              key={pacienteLista.matricula} 
-                              value={pacienteLista.matricula}>
-                              {`${pacienteLista.nome} ${pacienteLista.sobrenome}`}
+                              key={paciente.matricula} 
+                              value={paciente.matricula}>
+                              {`${paciente.nome} ${paciente.sobrenome}`}
                           </option>
                 })}
               </select>
@@ -148,8 +139,7 @@ const ScheduleForm = () => {
             {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
             <button
-              className={`btn btn-${theme} ${styles.button
-                }`}
+              className={`btn btn-${theme} ${styles.button}`}
               type="submit"
             >
               Schedule

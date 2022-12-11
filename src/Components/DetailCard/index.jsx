@@ -8,16 +8,14 @@ import { ctdUrl } from "../../urls";
 const DetailCard = () => {
   const { theme } = useTheme()
   const [dentistaData, setDentistaData] = useState([])
-  const {id} = useParams()
+  const { id } = useParams()
 
   useEffect(() => {
     //Nesse useEffect, você vai fazer um fetch na api passando o 
     //id do dentista que está vindo do react-router e carregar os dados em algum estado
     fetch(`${ctdUrl}dentista?matricula=${id}`)
       .then((response) => response.json()
-      .then((data) => {
-          setDentistaData(data);
-        })
+      .then((data) => setDentistaData(data))
       );
   }, []);
   return (
@@ -25,7 +23,7 @@ const DetailCard = () => {
       <h1>Detail about Dentist {dentistaData.nome} </h1>
       <section className="card col-sm-12 col-lg-6 container">
         <div
-          className={`${theme === 'dark'? styles.CardBody : ''} card-body row`}  
+          className={`${theme === 'dark'? styles.cardDark : ''} card-body row`}  
         >
           <div className="col-sm-12 col-lg-6">
             <img
@@ -50,8 +48,7 @@ const DetailCard = () => {
               <button
                 data-bs-toggle="modal"
                 data-bs-target="#exampleModal"
-                className={`btn btn-${theme} ${styles.button
-                  }`}
+                className={`btn btn-${theme} ${styles.button}`}
               >
                 Marcar consulta
               </button>

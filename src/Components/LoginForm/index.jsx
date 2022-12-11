@@ -16,8 +16,6 @@ const LoginForm = () => {
   const [erroForm, setErroForm] = useState(true)
   const navigate = useNavigate()
   const { theme } = useTheme()
-  
-
   const { setToken } = useAuth()
 
   
@@ -96,9 +94,8 @@ const LoginForm = () => {
   useEffect(
     () => {
       if(notFound){
-   
-      setNotFound(false)
-    }
+        setNotFound(false)
+      }
     }, [userName, userPassword]
   )
 
@@ -111,7 +108,7 @@ const LoginForm = () => {
       <div
         className={`text-center card container ${styles.card}`}
       >
-        <div className={`card-body ${theme === 'dark' ? styles.CardBody : '' }`}>
+        <div className={`card-body ${theme === 'dark' ? styles.cardDark : '' }`}>
           <form onSubmit={handleSubmit}>
             <div>
               <input
