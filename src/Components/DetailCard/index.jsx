@@ -17,7 +17,7 @@ const DetailCard = () => {
       .then((response) => response.json()
       .then((data) => setDentistaData(data))
       );
-  }, []);
+  }, [id]);
   return (
     <>
       <h1>Detail about Dentist {dentistaData.nome} </h1>

@@ -29,16 +29,13 @@ h1{
   align-items: center;
 }
 
-a{
-  color: #000;
+a{  
   text-decoration: none;
   margin: 5px;
   cursor: pointer;
 }
 
-a:hover{
-  color: rgb(136, 136, 136);
-} 
+
 
 form{
   display: flex;
@@ -80,16 +77,15 @@ tr:nth-child(even) {
 }
 
 .dark{
-  background-color: #12121296;
+  background-color: #303030;
   color: white;
 }
 .dark > a {
   color: white;
 }
 
-.dark h5{
-  color: white;
-}
+
+
 
 @media(min-width: 786px) and (max-width: 1065px){
   .card-grid{
