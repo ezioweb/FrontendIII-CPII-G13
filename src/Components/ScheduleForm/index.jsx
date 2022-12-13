@@ -4,6 +4,10 @@ import { useAuth } from "../../Hooks/useAuth";
 import { useTheme } from "../../Hooks/useTheme";
 import { ctdUrl } from "../../urls";
 import styles from "./ScheduleForm.module.css";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+
+
 
 const ScheduleForm = () => {
   // const [authToken, setAuthToken] = useState('')
@@ -12,6 +16,7 @@ const ScheduleForm = () => {
   const navigate = useNavigate()
   const { theme } = useTheme()
   const { token } = useAuth()
+  const mySwal = withReactContent(Swal)
 
 
   useEffect(() => {
@@ -71,9 +76,18 @@ const ScheduleForm = () => {
 
     fetch(`${ctdUrl}consulta`, requestConfig)
       .then(response => response.json()
-      // .then((data) => userData(data),
+      .then((data) => {
+        mySwal.fire({
+          text: 'Consulta agendada com sucesso',
+          icon: 'success',
+          position: 'top',
+          //timer: 2000,   
+          showConfirmButton: true,       
+        })
+        
+      }
       //     navigate('home')
-      )
+      ))
 
       navigate('home')
   };
@@ -139,6 +153,8 @@ const ScheduleForm = () => {
             {/* //Na linha seguinte deverá ser feito um teste se a aplicação
         // está em dark mode e deverá utilizar o css correto */}
             <button
+              data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
               className={`btn btn-${theme} ${styles.button}`}
               type="submit"
             >
