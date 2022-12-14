@@ -5,7 +5,7 @@ import "bootstrap/dist/js/bootstrap.min.js";
 import Navbar from "./Components/Navbar";
 import Home from "./Routes/Home";
 import Footer from "./Components/Footer";
-import "./index.css";
+import "./index.scss";
 import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

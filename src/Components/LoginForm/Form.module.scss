@@ -3,12 +3,34 @@
   gap: 1rem;
   padding: 1rem;
   margin-top: 2rem;
-  height: calc(100vh -86px);
+  // height: calc(100vh -86px);
+  
+  
+  .form-control{
+    padding: 20px;
+  }
+  
+}
+
+.erroform{
+  padding: 20px;
+  li{
+
+    margin-bottom: 50px;
+  }
+      
+}
+
+.light{
+  background-color: white;
 }
 
 .cardDark{
-  background-color: #31313196;
+  background: #31313196;
+  border: 1px solid white;
+  
 }
+
 
 .inputSpacing+.inputSpacing{
   margin: 1rem 0;
@@ -21,9 +43,12 @@
 
 form, span.erroForm {
   color: red;
+  
+  
+  
 }
 
-.btn :disabled {
+.disabled {
   opacity: .4;
   box-shadow: none;
   cursor: not-allowed;
