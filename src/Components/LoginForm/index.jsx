@@ -21,7 +21,7 @@ const LoginForm = () => {
 
   //UserEffect para validar formulário
   function validationUser(event) {
-    if (userName.length < 6) {
+    if (userName.length < 6 || userName.trim() === "") {
       setErroForm(true);
       setErroUserName(true);
       return true;
