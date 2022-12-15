@@ -33,7 +33,7 @@ describe('Navbar e footer componentes', () => {
         const styles = getComputedStyle(element)
 
         if (token === 'dark') {
-            expect(styles.backgroundColor).toBe('#12121296')
+            expect(styles.backgroundColor).toBe('#303030')
         }
     })
 
@@ -44,7 +44,7 @@ describe('Navbar e footer componentes', () => {
         const styles = getComputedStyle(element)
 
         if (token === 'dark') {
-            expect(styles.backgroundColor).toBe('#12121296')
+            expect(styles.backgroundColor).toBe('#303030')
         }
     })
 });

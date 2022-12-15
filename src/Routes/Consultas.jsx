@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import Card from "../Components/Card";
+import CardConsult from "../Components/CardConsult";
 import { ctdUrl } from "../urls";
 
-const Home = () => {
+const Consultas = () => {
   const [dentistaData, setDentistaData] = useState([]);
 
   useEffect(() => {
@@ -18,15 +18,16 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home</h1>
+      <h1>Consultas</h1>
+      <h4>Selecione o dentista para ver suas consultas marcadas</h4>
       <div className="card-grid container">
         {/* Tudo que está abaixo deve ir para o Card */}
         {dentistaData.map((dentistaCard) => {
-          return <Card key={dentistaCard.matricula} dentista={dentistaCard} />;
+          return <CardConsult key={dentistaCard.matricula} dentista={dentistaCard} />;
         })}
       </div>
     </>
   );
 };
 
-export default Home;
+export default Consultas;

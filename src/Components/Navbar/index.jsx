@@ -56,6 +56,10 @@ const Navbar = () => {
                 <Link className="nav-link" to="home">Home</Link>
               </li>
               <li className={`nav-item ${styles.navBarLink}`}>
+                              
+                <Link className="nav-link" to="consultas">Consultas</Link>
+              </li>
+              <li className={`nav-item ${styles.navBarLink}`}>
                 {/* Se o usuário estiver logado, deverá aparecer um botão de logout
                 que vai apagar o token do localstorage.
                 Se o usuário estiver deslogado, um link fará um redirecionamento, com react-router,

@@ -20,7 +20,7 @@ const DetailCard = () => {
   }, [id]);
   return (
     <>
-      <h1>Detail about Dentist {dentistaData.nome} </h1>
+      <h1>Detalhes sobre o dentista: {dentistaData.nome} </h1>
       <section className="card col-sm-12 col-lg-6 container">
         <div
           className={`${theme === 'dark'? styles.cardDark : ''} card-body row`}  

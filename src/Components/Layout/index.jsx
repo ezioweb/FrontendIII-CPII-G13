@@ -17,9 +17,8 @@ export function Layout() {
       navigate('home')
     }
   }
-
   useEffect(() => {
-    isLogged()
+    isLogged()    
   }, [token])
 
   return (
