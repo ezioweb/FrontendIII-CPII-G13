@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { ThemeProvider } from "../Hooks/useTheme";
+import { ThemeProvider } from "../../../Hooks/useTheme";
 import { Simulate } from "react-dom/test-utils";
-import App from "../App";
-import Card from "../Components/Card";
+import App from "../../../App";
+import Card from "../../../Components/Card";
 
 const mockData = {
     matricula: '123',
@@ -93,8 +93,3 @@ describe('Cards de dentistas componente', () => {
         }, 3000)
     })
 });
-
-describe('Card componente', () => {
-
-});
-
