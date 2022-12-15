@@ -25,7 +25,7 @@ const LoginForm = () => {
       setErroForm(true);
       setErroUserName(true);
       return true;
-    } else if (userPassword === "" || userPassword.length < 8) {
+    } else if (userPassword.trim() === "" || userPassword.length < 8) {
       setErroForm(true);
 
       setErroPassword(true);
