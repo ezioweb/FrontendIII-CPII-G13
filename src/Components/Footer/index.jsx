@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useTheme } from "../../Hooks/useTheme";
 import styles from "./Footer.module.css";
 
@@ -23,11 +24,9 @@ const Footer = () => {
                 <img className={`${styles.dhLogo} ${theme === 'dark'? styles.iconsDark : ''}`} src="/images/DH.png" alt='DH-logo' />
               </div>
               <div className={`col-sm-12 col-lg-6 ${styles.icons} ${theme === 'dark'? styles.iconsDark : ''}`}>
-                <img src="/images/ico-facebook.png" alt="ícone do facebook" className={styles.icon} />
-                <img src="/images/ico-instagram.png" alt="ícone do instagram" className={styles.icon} />
-                <img src="/images/ico-whatsapp.png" alt="ícone do whatsapp" className={styles.icon} />
-                <img src="/images/ico-tiktok.png" alt="ícone do tiktok" className={styles.icon} />
-              </div>
+              <Link to="https://www.facebook.com/digitalhousebrasil/" target="_blank"  rel="noopener noreferrer"><img src="/images/ico-facebook.png" alt="ícone do facebook" className={styles.icon} /></Link>
+                <Link to="https://www.instagram.com/digitalhousebrasil/" target="_blank"  rel="noopener noreferrer"><img src="/images/ico-instagram.png" alt="ícone do instagram" className={styles.icon} /></Link>
+                </div>
             </div>
           </div>
         </div>
