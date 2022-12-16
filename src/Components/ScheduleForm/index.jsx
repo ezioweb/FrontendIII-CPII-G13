@@ -158,7 +158,7 @@ const ScheduleForm = () => {
               className={`btn btn-${theme} ${styles.button}`}
               type="submit"
             >
-              Schedule
+              Agendar
             </button>
           </div>
         </form>
