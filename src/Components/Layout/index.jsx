@@ -19,7 +19,7 @@ export function Layout() {
   }
   useEffect(() => {
     isLogged()    
-  }, [token])
+  })  
 
   return (
     <>
